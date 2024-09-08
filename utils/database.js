@@ -10,7 +10,7 @@ export const connectToDB = async () => {
         return;
     }
 
-    const db = process.env.DB_URL;
+    const db = process.env.MONGODB_URI;
 
     try {
         await mongoose.connect(db, {
