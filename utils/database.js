@@ -9,9 +9,11 @@ export const connectToDB = async () => {
         console.log('MongoDB is already connected');
         return;
     }
-    
+
+    const db = process.env.DB_URL;
+
     try {
-        await mongoose.connect(process.env.MONGODB_URI, {
+        await mongoose.connect(db, {
             dbName: "share_prompt",
             useNewUrlParser: true,
             useUnifiedTopology: true
